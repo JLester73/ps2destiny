@@ -1,5 +1,7 @@
 require 'csv'
 
+# 2016-04-25 by Jason Lester
+
 # Delete the old output file if it exists
 File.delete("output.csv") if File::exists?("output.csv")
 
