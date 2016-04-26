@@ -9,9 +9,10 @@ File.delete("output.csv") if File::exists?("output.csv")
 CSV.foreach('sections.csv') do |row|
   expression = row[5]
   period = expression[0]
+  section = row[2] + "-" + row[3]
 
   # Write out the output file with the updated period
   CSV.open("output.csv", "a", {:force_quotes=>true}) do |csv|
-    csv << [row[0],row[1],row[2],row[3],row[4],period,row[6],row[7]]
+    csv << [row[0],row[1],row[2],section,row[4],period,row[6],row[7]]
   end
 end
